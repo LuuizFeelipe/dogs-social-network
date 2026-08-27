@@ -1,11 +1,20 @@
 import styles from '../Forms/Input.module.css';
 
-const Input = ({ label, type, name }) => {
+const Input = ({ label, type, name, value, onChange, error, onBlur }) => {
   return (
     <div className={styles.wrapper}>
-      <label className={styles.label} htmlFor={name}>{label}</label>
-      <input id={name} name={name} className={styles.input} type={type} />
-      <p className={styles.error}>Error</p>
+      <label className={styles.label} htmlFor={name}>
+        {label}
+      </label>
+      <input 
+        id={name} 
+        name={name} 
+        className={styles.input} 
+        type={type} value={value} 
+        onChange={onChange} 
+        onBlur={onBlur} 
+      />
+      {error && <p className={styles.error}>{error}</p>}
     </div>
   )
 }
