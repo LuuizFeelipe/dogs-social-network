@@ -14,7 +14,7 @@ export function TOKEN_POST(body) {
   }
 }
 
-export function TOKEN_GET(token) {
+export function USER_GET(token) {
   return {
     url: API_URL + '/api/user',
     options: {
