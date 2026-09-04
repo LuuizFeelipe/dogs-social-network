@@ -57,7 +57,6 @@ const UserStorage = ({ children }) => {
     async function autoLogin() {
       const token = localStorage.getItem("token");
       if(token) {
-
         try {
           setError(null);
           setLoading(true);
@@ -71,13 +70,12 @@ const UserStorage = ({ children }) => {
         } catch(err) {
           userLogout();
           
-
         } finally {
           setLoading(false);
 
         }
-
-   
+      } else {
+        setLogin(false);
       }
     }
 

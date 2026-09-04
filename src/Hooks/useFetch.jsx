@@ -6,7 +6,7 @@ const useFetch = () => {
   const [error, setError] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
 
-  const request = React.useCallback(async ({url, options}) => {
+  const request = React.useCallback(async (url, options) => {
     let response;
     let json;
 
@@ -16,10 +16,12 @@ const useFetch = () => {
       
       response = await fetch(url, options);
       json = await response.json();
+      
       if(!response.ok) throw new Error(`${json.message}`);
 
     } catch(err) {
       json = null;
+      console.log(err.message)
       setError(err.message);
 
     } finally { 
