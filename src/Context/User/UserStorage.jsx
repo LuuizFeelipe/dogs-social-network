@@ -51,6 +51,7 @@ const UserStorage = ({ children }) => {
     setLogin(false);
     localStorage.removeItem("token");
     navigate("/login");
+    
   }, [navigate]);
 
   React.useEffect(() => {
