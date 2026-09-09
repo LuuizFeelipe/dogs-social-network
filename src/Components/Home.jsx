@@ -1,10 +1,10 @@
-import React from 'react'
+import Feed from './Feed/Feed.jsx';
 
 const Home = () => {
   return (
-    <div>
-      Essa é a home
-    </div>
+    <section className="container mainContainer">
+      <Feed />
+    </section>
   )
 }
 
